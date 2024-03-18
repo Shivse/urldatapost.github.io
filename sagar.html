@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload CSV </title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Simple Web Browser</title>
     <style>
-        
-        #csvContent {
-            width: 90%;
-            height: 300px; /* Set your desired height */
-            overflow: auto; /* Enable scrollbar */
-            border: 3px solid #535254;
-            padding: 5px;
-            font-family: monospace; /* Ensure fixed-width font for proper alignment */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
-
-        /* Custom CSS for form alignment */
-        .form-container {
-            max-width: 500px;
-            margin: auto;
-            padding: 20px;
+        #browser-frame {
+            width: 100%;
+            height: 100vh;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div class="container-fluid form-container">
-        <h2 class="text-center mb-4">Upload CSV File</h2>
-        <form id="uploadForm" enctype="multipart/form-data">
-            <link src"https://gpsdataurl.alchosting.xyz/?i=1">
-        </form>
-        
-            
+    <iframe id="browser-frame" src="https://www.example.com"></iframe>
+    <script>
+        window.onload = function() {
+            const iframe = document.getElementById('browser-frame');
+            // Set initial URL
+            iframe.src = 'https://www.example.com'; // Default webpage
+
+            // Function to load a new URL
+            function loadURL(url) {
+                iframe.src = url;
+            }
+
+            // Example: Load a new URL
+            // loadURL('https://www.example.com');
+        }
+    </script>
 </body>
 </html>
